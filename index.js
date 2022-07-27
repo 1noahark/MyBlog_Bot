@@ -86,12 +86,27 @@ bot.on("message", async (message) => {
 
     async function post(){
 
-        newmessage = `Blog By : ${message.chat.username} \n\n ${message.text} \n\n @MyBlog_Post`
+        var newmessage = `Blog By : ${message.chat.username} \n\n ${message.text} \n\n @MyBlog_Post`
+        
 
-        if(message.text){
-            bot.sendMessage(chatid, "Blog Posted! \n @MyBlog_Post")
-            bot.sendPhoto(process.env.CID, "./Image/blog.png", {caption: newmessage})
-            
+        var messagelimit = 650
+        
+        var messagelength = newmessage.length
+
+        
+
+        if(messagelength > messagelimit){
+            bot.sendMessage(chatid, `MEDIA_CAPTION_TOO_LONG, The blog limit is upto ${messagelimit} character and your character/word is ${messagelength}`)
+        } else {
+
+            if(message.text){
+                bot.sendMessage(chatid, "Blog Posted! \n @MyBlog_Post")
+                bot.sendPhoto(process.env.CID, "./Image/blog.png", {caption: newmessage})
+    
+    
+                
+            }
+
         }
         
     }
