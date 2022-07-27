@@ -6,6 +6,8 @@ const app = express();
 const mongoose = require('mongoose');
 const blog = require("./model/model")
 
+app.set('port', (process.env.PORT || 5000));
+
 
 // connect to DB
 
