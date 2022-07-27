@@ -86,7 +86,7 @@ bot.on("message", async (message) => {
 
     async function post(){
 
-        var newmessage = `Blog By : ${message.chat.username} \n\n ${message.text} \n\n @MyBlog_Post`
+        var newmessage = `Blog By : ${message.chat.username || message.chat.first_name} \n\n ${message.text} \n\n @MyBlog_Post`
         
 
         var messagelimit = 650
