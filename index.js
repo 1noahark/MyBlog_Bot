@@ -9,36 +9,36 @@ const blog = require("./model/model")
 
 // connect to DB
 
-mongoose.connect(process.env.URL, {useNewUrlParser: true})
+// mongoose.connect(process.env.URL, {useNewUrlParser: true})
 
 
 // check status
 
-app.get("/", (req, res) => {
-    const connection = mongoose.connection
+// app.get("/", (req, res) => {
+//     const connection = mongoose.connection
 
-    try {
+//     try {
 
-        connection.on('connection', () => {
-            console.log("connected to DB")
-        }) 
-        connection.once('error', (err) => {
-            res.send(err.message)
-        })
+//         connection.on('connection', () => {
+//             console.log("connected to DB")
+//         }) 
+//         connection.once('error', (err) => {
+//             res.send(err.message)
+//         })
         
-    } catch (dberr) {
+//     } catch (dberr) {
 
-        res.send("app error")
+//         res.send("app error")
         
-    }
+//     }
 
 
 
 
     
-})
+// })
 
-app.listen(4000)
+// app.listen(4000)
 
 
 
