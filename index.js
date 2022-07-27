@@ -113,7 +113,7 @@ bot.on("message", async (message) => {
         bot.sendMessage(chatid, "to post you just have to type the blog and \n automatically it will be posted on @MyBlog_Post \n if there is anything you don't understand or you don't like contact me here @noahark \n you can also contact me if you want to delete/edit your post")
 
     } else {
-        post()
+        await post()
     }
 
 
