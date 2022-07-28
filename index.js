@@ -97,6 +97,11 @@ bot.on("message", async (message) => {
 
         if(messagelength > messagelimit){
             bot.sendMessage(chatid, `MEDIA_CAPTION_TOO_LONG, The blog limit is upto ${messagelimit} character and your character/word is ${messagelength}`)
+        } else if(message.text.includes("t.me") || message.text.includes("@")){
+            
+            bot.sendMessage(chatid, "Sorry but because of promotion policy you can't add a t.me username or @ in your blog \n\n if you want that removed please contact @noahark")
+            
+
         } else {
 
             if(message.text){
